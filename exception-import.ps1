@@ -99,6 +99,7 @@ if($ClearExceptions) {
 }
 for($r = 2; $r -le $TotalRows; $r += 1){
     $name = $Worksheet.Cells($r, $ExNameCol).Text
+    if('' -eq $name) {continue}
     $isWorkday = $Worksheet.Cells($r, $ExWorkdayCol).Text
     $start = $Worksheet.Cells($r, $ExStartDateCol).Text
     $finish = $Worksheet.Cells($r, $ExFinishDateCol).Text
@@ -114,7 +115,7 @@ for($r = 2; $r -le $TotalRows; $r += 1){
     if($null -eq $ex) {
         continue
     }
-    if([bool]$isWorkday) {
+    if([bool][int]$isWorkday) {
         $cnt = 0
         :shiftloop foreach($sh in $WorkdayShifts) {
             $cnt += 1
