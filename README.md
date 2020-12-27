@@ -13,7 +13,8 @@ Exceptions are days which have shift schedules different from default work calen
     If there are any overtime exceptions, a shift schedule of them should also be defined:
     - `Shift Start`: starting time of the overtime shift
     - `Shift Finish`: ending time of the overtime shift
-    MS Project supports only 5 work periods per day. The script will take the first 5 periods and ignore the rest.
+    
+        MS Project supports only 5 work periods per day. The script will take the first 5 periods and ignore the rest.
     
 2. Open powershell, and call the script as below. Omit `-ClearExceptions` if you want to keep existing exceptions from the project file.
 
